@@ -6,9 +6,9 @@
 <table class="filters">
   <thead>
   <tr>
-    <th style="width: 20%"></th>
-    <th style="width: 50%"><input type="text" placeholder="Filter by URL" name="url" (keyup)="columnSearch($event)"/></th>
-    <th style="width: 30%"><input type="text" placeholder="Filter by Email/User" name="email" (keyup)="columnSearch($event)"/></th>
+    <th class="empty-filter" ></th>
+    <th class="url-filter" ><input type="text" placeholder="Filter by URL" name="url" (keyup)="columnSearch($event)"/></th>
+    <th class="email-filter" ><input type="text" placeholder="Filter by Email/User" name="email" (keyup)="columnSearch($event)"/></th>
   </tr>
   </thead>
 </table>

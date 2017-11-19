@@ -11,7 +11,7 @@ import 'rxjs/add/operator/map';
   styleUrls: ['./history.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class HistoryComponent implements OnInit, AfterViewInit {
+export class HistoryComponent implements OnInit {
   @ViewChild(DataTableDirective)
   datatableElement: DataTableDirective;
 
@@ -27,15 +27,12 @@ export class HistoryComponent implements OnInit, AfterViewInit {
   constructor(private urlService: UrlService) {
   }
 
-  ngAfterViewInit(): void {
-
-  }
-
   ngOnInit() {
     this.columnsArray = [
       {title: 'Time', data: 'time', name: 'time', width: '20%'},
       {title: 'URL', data: 'url', name: 'url', width: '50%'},
       {title: 'Email', data: 'email', name: 'email', width: '30%'},
+      {title: 'Frames', data: 'frames', name: 'frames', class: 'none'},
     ];
     this.customColumnsDef = [
       {
@@ -44,6 +41,25 @@ export class HistoryComponent implements OnInit, AfterViewInit {
           const transformedValue = this.transform(full.time);
           if (type === 'display') {
             return `<span>${transformedValue}</span>`;
+          }
+          // For sorting, filtering and etc.
+          else {
+            return data;
+          }
+        }
+      },
+      {
+        targets: 3,
+        render: (data, type, full) => {
+          if (type === 'display') {
+            let html = '<ul>';
+            full.frames.forEach(frame => {
+              if (frame) {
+                html = html.concat('<li>').concat(frame).concat('</li>');
+              }
+            });
+            html = html.concat('</ul>');
+            return html;
           }
           // For sorting, filtering and etc.
           else {
@@ -60,7 +76,9 @@ export class HistoryComponent implements OnInit, AfterViewInit {
       columnDefs: this.customColumnsDef,
       columns: this.columnsArray,
       data: this.urls,
-      dom: 'rtlip'
+      dom: 'rtlip',
+      // Use this attribute to enable the responsive extension
+      responsive: true
     };
     this.getUrls();
   }
