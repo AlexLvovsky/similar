@@ -19,6 +19,8 @@ Other tools and technologies used:
 * [Angular CLI](https://cli.angular.io): frontend scaffolding
 * [Bootstrap](http://www.getbootstrap.com): layout and styles
 * [Font Awesome](http://fontawesome.io): icons
+* [DataTables](https://datatables.net/): DataTables Table plug-in for jQuery
+* [Angular DataTables](https://l-lin.github.io/angular-datatables/#/welcome)
 
 ## Prerequisites
 1. Install [Node.js](https://nodejs.org)
