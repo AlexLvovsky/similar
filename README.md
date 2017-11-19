@@ -1,9 +1,4 @@
-## Chrome Extension
-
-1. Visit chrome://extensions in your browser.
-2. Ensure that the Developer mode checkbox in the top right-hand corner is checked.
-3. Click Load unpacked extension… to pop up a file-selection dialog.
-4. Navigate to the "..\similar\extension" folder, and select it.
+# IMPORTANT: First need to run Frontend part and then Extension
 
 ## Frontend
 
@@ -22,13 +17,21 @@ Other tools and technologies used:
 * [DataTables](https://datatables.net/): DataTables Table plug-in for jQuery
 * [Angular DataTables](https://l-lin.github.io/angular-datatables/#/welcome)
 
-## Prerequisites
+#### Prerequisites
 1. Install [Node.js](https://nodejs.org)
 2. Install Angular CLI: `npm i -g @angular/cli`
 3. Navigate to "..\similar\HistoryApp" folder
 4. Run: `npm i`
 
-## Run
+#### Run
 `npm run dev`: [concurrently](https://github.com/kimmobrunfeldt/concurrently) execute MongoDB, Angular build, TypeScript compiler and Express server.
 
 A window will automatically open at [localhost:4200](http://localhost:4200). Angular and Express files are being watched. Any change automatically creates a new bundle, restart Express server and reload your browser.
+
+
+## Chrome Extension
+
+1. Visit chrome://extensions in your browser.
+2. Ensure that the Developer mode checkbox in the top right-hand corner is checked.
+3. Click Load unpacked extension… to pop up a file-selection dialog.
+4. Navigate to the "..\similar\extension" folder, and select it.
