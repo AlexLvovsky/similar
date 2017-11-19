@@ -3,7 +3,7 @@
   "version":        "0.2",
   "description":    "SimilarWeb Extension",
   "browser_action": {
-    "default_icon": "icon.png",
+    "default_icon": "similar.png",
     "default_popup": "popup.html"
   },
   "background": {
