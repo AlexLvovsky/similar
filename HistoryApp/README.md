@@ -1,3 +1,12 @@
+## Chrome Extension
+
+1. Visit chrome://extensions in your browser.
+2. Ensure that the Developer mode checkbox in the top right-hand corner is checked.
+3. Click Load unpacked extension… to pop up a file-selection dialog.
+4. Navigate to the "..\similar\extension" folder, and select it.
+
+## Frontend
+
 The frontend is generated with [Angular CLI](https://github.com/angular/angular-cli). The backend is made from scratch. Whole stack in [TypeScript](https://www.typescriptlang.org).
 
 This project uses the [MEAN stack](https://en.wikipedia.org/wiki/MEAN_(software_bundle)):
@@ -12,15 +21,12 @@ Other tools and technologies used:
 * [Font Awesome](http://fontawesome.io): icons
 
 ## Prerequisites
-1. Install [Node.js](https://nodejs.org) and [MongoDB](https://www.mongodb.com)
+1. Install [Node.js](https://nodejs.org)
 2. Install Angular CLI: `npm i -g @angular/cli`
-3. From project root folder install all the dependencies: `npm i`
+3. Navigate to "..\similar\HistoryApp" folder
+4. Run: `npm i`
 
 ## Run
-### Development mode
 `npm run dev`: [concurrently](https://github.com/kimmobrunfeldt/concurrently) execute MongoDB, Angular build, TypeScript compiler and Express server.
 
 A window will automatically open at [localhost:4200](http://localhost:4200). Angular and Express files are being watched. Any change automatically creates a new bundle, restart Express server and reload your browser.
-
-### Production mode
-`npm run prod`: run the project with a production bundle and AOT compilation listening at [localhost:3000](http://localhost:3000) 
