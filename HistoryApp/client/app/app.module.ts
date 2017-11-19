@@ -2,6 +2,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { RoutingModule } from './routing.module';
 import { SharedModule } from './shared/shared.module';
+import { DataTablesModule } from 'angular-datatables';
 import { AppComponent } from './app.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { UrlService } from './services/url.service';
@@ -15,7 +16,8 @@ import { HistoryComponent } from './history/history.component';
   ],
   imports: [
     RoutingModule,
-    SharedModule
+    SharedModule,
+    DataTablesModule
   ],
   providers: [
     UrlService

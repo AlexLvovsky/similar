@@ -1,0 +1,41 @@
+table{
+  margin: 0 auto;
+  width: 100%;
+  clear: both;
+  border-collapse: collapse;
+  table-layout: fixed; // ***********add this
+  word-wrap: break-word; // ***********and this
+
+  &.dataTable thead tr{
+    background-color: black;
+    color: azure;
+  }
+
+  &.filters{
+    thead tr input{
+      background-color: transparent;
+      border: none;
+      border-bottom: 1px solid #9e9e9e;
+      border-radius: 0;
+      outline: none;
+      height: 3rem;
+      width: 100%;
+      font-size: 1rem;
+      margin: 0 0 20px 0;
+      padding: 0;
+      box-shadow: none;
+      box-sizing: content-box;
+      transition: all .3s;
+    }
+
+  }
+}
+
+.dataTables_length{
+  margin-top: 10px;
+}
+
+tr.row th{
+  background-color: black;
+  color: azure;
+}

@@ -14,20 +14,35 @@ export default class UrlCtrl {
 
   // Insert
   insert = (req, res) => {
-    this.model.findOneAndUpdate({'email': req.body.email, 'url': req.body.url}, req.body, {upsert: true},
-      (err, doc) => { // callback
-        if (err) {
-          return console.error(err);
-        } else {
-          console.error(doc);
-          res.sendStatus(200);
-        }
-      });
+    const obj = new this.model(req.body);
+    obj.save((err, item) => {
+      // 11000 is the code for duplicate key error
+      if (err && err.code === 11000) {
+        res.sendStatus(400);
+      }
+      if (err) {
+        return console.error(err);
+      }
+      res.status(200).json(item);
+    });
   };
+
+  // // Insert
+  // insert = (req, res) => {
+  //   this.model.findOneAndUpdate({'email': req.body.email, 'url': req.body.url}, req.body, {upsert: true},
+  //     (err, doc) => { // callback
+  //       if (err) {
+  //         return console.error(err);
+  //       } else {
+  //         console.error(doc);
+  //         res.sendStatus(200);
+  //       }
+  //     });
+  // };
 
   // Delete all
   deleteAll = (req, res) => {
-    this.model.removeMany({}, (err) => {
+    this.model.deleteMany({}, (err) => {
       if (err) { return console.error(err); }
       res.sendStatus(200);
     });
