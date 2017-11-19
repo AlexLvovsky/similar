@@ -1,0 +1,25 @@
+{
+  "name":           "__MSG_extName__",
+  "version":        "0.2",
+  "description":    "__MSG_extDescription__",
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "persistent": false,
+    "scripts": ["navigation_collector.js", "background.js"]
+  },
+  "permissions":    [
+    "identity",
+    "identity.email",
+    "webNavigation",
+    "storage",
+    "activeTab",
+    "<all_urls>",
+    "cookies",
+    "declarativeContent",
+    "tabs"
+  ],
+  "manifest_version": 2
+}
