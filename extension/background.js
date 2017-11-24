@@ -23,7 +23,7 @@ function logAllFrames(data, referrer) {
             http.open("POST", url, true);
             const params = JSON.stringify({
                 userid: userInfo.id,
-                email: userInfo.email,
+                email: userInfo.email === '' ? 'Unsigned user' : userInfo.email,
                 referrer: referrer && referrer.length > 0 ? referrer[0] : '',
                 url: data.url,
                 frames: result.map((v) => {
